@@ -4,6 +4,9 @@ import os
 
 
 def main(L,L2):
+    """
+    fonction qui rassemble toute les données sur un cheval
+    """
     matrices, labels = [],[]
     for i in range(len(L)):
         link = L[i]
@@ -23,7 +26,11 @@ def main(L,L2):
 
 
 def get_matrices(dataframes):
-
+    """
+    oragnise les données, supprimer les colonnes non utilisé, traite les cas ou les labels sont abscents 
+    et regroupe les données en matrice ?(compris entre 100 et 200)*8 (les features)
+    le cas unkown est amené à etre utilisé
+    """
     # Concaténer tous les DataFrames ensemble
     data = pd.concat(dataframes, ignore_index=True)
 
@@ -66,9 +73,10 @@ def get_matrices(dataframes):
     return group_list, label_list
 
 
-
-
 def sequence_data(group_list, label_list):
+    """
+    reparti les données entre données test et donnée d'entrainent
+    """
     from sklearn.model_selection import train_test_split
 
     train_groups, test_groups, train_groups_label, test_groups_label = train_test_split(

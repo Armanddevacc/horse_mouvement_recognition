@@ -168,14 +168,14 @@ model.fit(X_train, y_train, epochs=10, batch_size=32, validation_data=(X_val, y_
 
 
 # Sauvegarder tout le modèle
-model.save('model_cheveux.keras')
+model.save('data/model_cheveux.keras')
 
 
 
 
 import db_initialisation
 db_initialisation.init_table()
-conn = sqlite3.connect("test_data.db")
+conn = sqlite3.connect("data/test_data.db")
 cursor = conn.cursor()
 for i, (data, label) in enumerate(zip(X_val, y_val)):
     data_list = data.tolist()  # Convertir ndarray en liste
