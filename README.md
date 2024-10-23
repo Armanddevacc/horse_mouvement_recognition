@@ -2,7 +2,12 @@
 
 ## Description du projet
 
-Ce projet implémente un **réseau de neurones convolutif (CNN)** pour résoudre un problème de classification multi-classes en utilisant les bibliothèques **TensorFlow** et **Keras**. Le modèle est conçu pour traiter des données d'entrée structurées sous la forme de séquences avec 8 caractéristiques et 200 points par séquence (après padding). L'objectif est de classer ces données dans l'une des 17 classes disponibles.
+Ce projet implémente un **réseau de neurones convolutif (CNN)** pour résoudre un problème de classification multi-classes en utilisant les bibliothèques **TensorFlow** et **Keras**. Le modèle est conçu pour traiter des données d'entrée structurées sous la forme de séquences avec 8 caractéristiques (Ax,Ay,Az,Gx,Gy,Gz,A3,G3) et 200 points par séquence (après padding, enregistrement entre 1 à 2 minutes car la fréquence du capteur est 100Hz). L'objectif est de classer ces données dans l'une des 17 classes disponibles. 
+Les 17 classes:
+```python
+    labels=["eating" ,"fighting" ,"galloping-natural","galloping-rider" ,"grazing" ,"head-shake" ,"jumping" ,"rolling" ,"rubbing" ,"scared" ,"scratch-biting" ,"shaking","standing","trotting-natural","trotting-rider","walking-natural","walking-rider"]
+```
+La base de donnée utilisé est disponible ici: https://data.4tu.nl/articles/Horsing_Around_--_A_Dataset_Comprising_Horse_Movement/12687551 Ce groupe a aussi publié un article sur leur recherche https://www.researchgate.net/publication/335978678_Horsing_Around-A_Dataset_Comprising_Horse_Movement
 
 ## Architecture du réseau
 
@@ -154,13 +159,13 @@ Une fois l'entraînement terminé, vous pouvez évaluer les performances de votr
 from sklearn.metrics import confusion_matrix, classification_report
 import seaborn as sns
 ```
-# Générer les prédictions
+## Générer les prédictions
 ```python
 y_pred = model.predict(X_val)
 y_pred_classes = np.argmax(y_pred, axis=1)
 y_true = np.argmax(y_val, axis=1)
 ```
-# Afficher la matrice de confusion
+## Afficher la matrice de confusion
 ```python
 conf_matrix = confusion_matrix(y_true, y_pred_classes)
 sns.heatmap(conf_matrix, annot=True, fmt="d", cmap="Blues")
@@ -169,7 +174,3 @@ Contributions
 Si vous souhaitez contribuer à ce projet, n'hésitez pas à ouvrir une Pull Request sur ce dépôt GitHub ou à contacter l'auteur pour discuter des améliorations potentielles.
 
 
-### Explication :
-- Les balises de code sont bien définies avec les backticks triples (```) pour que les blocs de code soient correctement formatés dans GitHub.
-- Le texte est structuré avec des titres et sous-titres en Markdown (`#`, `##`, etc.) pour une lecture claire.
-- Tu peux copier-coller directement ce `README.md` dans ton projet GitHub.
