@@ -27,7 +27,7 @@ def init_table():
 
 
 def load_data():
-    conn = sqlite3.connect("test_data.db")
+    conn = sqlite3.connect("data/test_data.db")
     cursor = conn.cursor()
     query = """SELECT data,label FROM test_data"""
     cursor.execute(query)
