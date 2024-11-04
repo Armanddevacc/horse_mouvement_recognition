@@ -182,6 +182,14 @@ Cette route est amené à être sécurisé en utilisant des tockens JWT.
 Authorization: Bearer <token> 
 ```
 
+
+## Résultats:
+
+Les résultats peuvent être analysés comme ci-dessus : certaines classes sont très peu présentes, d'où leur sous-représentation dans la matrice de confusion.
+
+![matrice de confusion](data/matrice-de-confusion.png)
+
+
 Si vous souhaitez contribuer à ce projet, n'hésitez pas à ouvrir une Pull Request sur ce dépôt GitHub ou à contacter l'auteur pour discuter des améliorations potentielles.
 
 

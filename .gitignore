@@ -1,6 +1,5 @@
 /.DS_Store
 /.venv
-/ModelePrediction.py
 /__pycache__
 /activity_distribution_sorted.xlsx
 /csv

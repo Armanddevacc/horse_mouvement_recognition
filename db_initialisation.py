@@ -41,3 +41,6 @@ def load_data():
     X_test = np.array([np.array(json.loads(data)) for data, label in data_label_pairs])
     y_test = np.array([np.array(json.loads(label)) for data, label in data_label_pairs])
     return X_test,y_test
+
+X_test,y_test=load_data()
+print(X_test[0]," label est ", y_test[0])
