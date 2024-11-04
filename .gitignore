@@ -1,10 +1,9 @@
 /.DS_Store
 /.venv
 /__pycache__
-/activity_distribution_sorted.xlsx
 /csv
 /matlab
 /settings.xlsx
 /subject_mapping.xlsx
-/test_data.db
-/data
+/data/test_data.db
+/data/activity_distribution_sorted.xlsx
